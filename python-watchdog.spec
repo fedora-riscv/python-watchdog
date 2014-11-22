@@ -5,8 +5,8 @@
 %global modname watchdog
 
 Name:               python-watchdog
-Version:            0.7.1
-Release:            4%{?dist}
+Version:            0.8.2
+Release:            1%{?dist}
 Summary:            File system events monitoring
 
 Group:              Development/Libraries
@@ -106,6 +106,9 @@ popd
 %endif
 
 %changelog
+* Sat Nov 22 2014 Pierre-Yves Chibon <pingou@pingoured.fr> - 0.8.2-1
+- Update to 0.8.2
+
 * Fri Apr 25 2014 Pierre-Yves Chibon <pingou@pingoured.fr> - 0.7.1-4
 - Adjust the license tag to ASL2.0 and BSD and MIT
 
