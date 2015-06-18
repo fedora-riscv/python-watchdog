@@ -6,7 +6,7 @@
 
 Name:               python-watchdog
 Version:            0.8.2
-Release:            1%{?dist}
+Release:            2%{?dist}
 Summary:            File system events monitoring
 
 Group:              Development/Libraries
@@ -106,6 +106,9 @@ popd
 %endif
 
 %changelog
+* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.8.2-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+
 * Sat Nov 22 2014 Pierre-Yves Chibon <pingou@pingoured.fr> - 0.8.2-1
 - Update to 0.8.2
 
