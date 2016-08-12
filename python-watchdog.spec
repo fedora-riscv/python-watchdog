@@ -6,7 +6,7 @@
 
 Name:               python-watchdog
 Version:            0.8.2
-Release:            3%{?dist}
+Release:            4%{?dist}
 Summary:            File system events monitoring
 
 Group:              Development/Libraries
@@ -23,7 +23,7 @@ BuildRequires:      PyYAML >= 3.09
 BuildRequires:      python-argh >= 0.8.1
 BuildRequires:      python-pathtools >= 0.1.1
 Requires:           PyYAML >= 3.09
-Requires:           python2-argh >= 0.8.1
+Requires:           python-argh >= 0.8.1
 Requires:           python-pathtools >= 0.1.1
 
 %if 0%{?with_python3}
@@ -112,6 +112,9 @@ popd
 %endif
 
 %changelog
+* Fri Aug 12 2016 Julien Enselme <jujens@jujens.eu> - 0.8.2-4
+- python2-argh doesn't exist in f23. Use python-argh instead.
+
 * Fri Aug 12 2016 Julien Enselme <jujens@jujens.eu> - 0.8.2-3
 - Correct requires list
 
