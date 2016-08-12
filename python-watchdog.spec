@@ -6,7 +6,7 @@
 
 Name:               python-watchdog
 Version:            0.8.2
-Release:            2%{?dist}
+Release:            3%{?dist}
 Summary:            File system events monitoring
 
 Group:              Development/Libraries
@@ -22,6 +22,9 @@ BuildRequires:      python-pytest-cov
 BuildRequires:      PyYAML >= 3.09
 BuildRequires:      python-argh >= 0.8.1
 BuildRequires:      python-pathtools >= 0.1.1
+Requires:           PyYAML >= 3.09
+Requires:           python2-argh >= 0.8.1
+Requires:           python-pathtools >= 0.1.1
 
 %if 0%{?with_python3}
 BuildRequires:      python3-devel
@@ -37,6 +40,9 @@ A Python API and shell utilities to monitor file system events.
 
 %if 0%{?with_python3}
 %package -n python3-watchdog
+Requires:           python3-PyYAML >= 3.09
+Requires:           python3-argh >= 0.8.1
+Requires:           python3-pathtools >= 0.1.1
 Summary:            Filesystem events monitoring
 Group:              Development/Libraries
 
@@ -106,6 +112,9 @@ popd
 %endif
 
 %changelog
+* Fri Aug 12 2016 Julien Enselme <jujens@jujens.eu> - 0.8.2-3
+- Correct requires list
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.8.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
