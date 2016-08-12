@@ -2,7 +2,7 @@
 
 Name:               python-%{modname}
 Version:            0.8.3
-Release:            1%{?dist}
+Release:            2%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
@@ -21,7 +21,7 @@ BuildRequires:      pytest
 BuildRequires:      python-pytest-cov
 BuildRequires:      PyYAML >= 3.09
 BuildRequires:      python2-argh >= 0.8.1
-Requires:           python-pathtools >= 0.1.1
+BuildRequires:      python-pathtools >= 0.1.1
 Requires:           PyYAML >= 3.09
 Requires:           python2-argh >= 0.8.1
 Requires:           python-pathtools >= 0.1.1
@@ -108,6 +108,9 @@ popd
 
 
 %changelog
+* Thu Aug 12 2016 Julien Enselme <jujens@jujens.eu> - 0.8.3-2
+- Add python2-pathtools to BR (was two times in Requires)
+
 * Thu Aug 11 2016 Julien Enselme <jujens@jujens.eu> - 0.8.3-1
 - Update to 0.8.3
 - Correct requires
