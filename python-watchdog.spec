@@ -2,7 +2,7 @@
 
 Name:               python-%{modname}
 Version:            0.8.3
-Release:            2%{?dist}
+Release:            3%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
@@ -19,6 +19,7 @@ BuildArch:          noarch
 BuildRequires:      python2-devel
 BuildRequires:      pytest
 BuildRequires:      python-pytest-cov
+BuildRequires:      python2-pytest-timeout
 BuildRequires:      PyYAML >= 3.09
 BuildRequires:      python2-argh >= 0.8.1
 BuildRequires:      python-pathtools >= 0.1.1
@@ -37,6 +38,7 @@ BuildArch:          noarch
 BuildRequires:      python3-devel
 BuildRequires:      python3-pytest
 BuildRequires:      python3-pytest-cov
+BuildRequires:      python3-pytest-timeout
 BuildRequires:      python3-PyYAML >= 3.09
 BuildRequires:      python3-argh >= 0.8.1
 BuildRequires:      python3-pathtools >= 0.1.1
@@ -85,9 +87,8 @@ popd
 
 
 %check
-# Cannot launch test until https://pypi.python.org/pypi/pytest-timeout is packaged
-# %%{__python2} setup.py test
-# %%{__python3} setup.py test
+%{__python2} setup.py test
+%{__python3} setup.py test
 
 
 %files -n python2-watchdog
@@ -108,6 +109,9 @@ popd
 
 
 %changelog
+* Mon Aug 15 2016 Julien Enselme <jujens@jujens.eu> - 0.8.3-3
+- Add python-pytest-timeout to BR to launch tests
+
 * Thu Aug 12 2016 Julien Enselme <jujens@jujens.eu> - 0.8.3-2
 - Add python2-pathtools to BR (was two times in Requires)
 
