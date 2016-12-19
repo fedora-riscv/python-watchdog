@@ -2,7 +2,7 @@
 
 Name:               python-%{modname}
 Version:            0.8.3
-Release:            3%{?dist}
+Release:            4%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
@@ -109,6 +109,9 @@ popd
 
 
 %changelog
+* Mon Dec 19 2016 Miro Hrončok <mhroncok@redhat.com> - 0.8.3-4
+- Rebuild for Python 3.6
+
 * Mon Aug 15 2016 Julien Enselme <jujens@jujens.eu> - 0.8.3-3
 - Add python-pytest-timeout to BR to launch tests
 
