@@ -2,7 +2,7 @@
 
 Name:               python-%{modname}
 Version:            0.8.3
-Release:            7%{?dist}
+Release:            8%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
@@ -17,15 +17,15 @@ A Python API and shell utilities to monitor file system events.
 %package -n python2-%{modname}
 BuildArch:          noarch
 BuildRequires:      python2-devel
-BuildRequires:      pytest
-BuildRequires:      python-pytest-cov
+BuildRequires:      python2-pytest
+BuildRequires:      python2-pytest-cov
 BuildRequires:      python2-pytest-timeout
-BuildRequires:      PyYAML >= 3.09
+BuildRequires:      python2-pyyaml >= 3.09
 BuildRequires:      python2-argh >= 0.8.1
-BuildRequires:      python-pathtools >= 0.1.1
-Requires:           PyYAML >= 3.09
+BuildRequires:      python2-pathtools >= 0.1.1
+Requires:           python2-pyyaml >= 3.09
 Requires:           python2-argh >= 0.8.1
-Requires:           python-pathtools >= 0.1.1
+Requires:           python2-pathtools >= 0.1.1
 Summary:            %{summary}
 %{?python_provide:%python_provide python2-%{modname}}
 
@@ -109,6 +109,10 @@ popd
 
 
 %changelog
+* Mon Mar 26 2018 Iryna Shcherbina <ishcherb@redhat.com> - 0.8.3-8
+- Update Python 2 dependency declarations to new packaging standards
+  (See https://fedoraproject.org/wiki/FinalizingFedoraSwitchtoPython3)
+
 * Fri Feb 09 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0.8.3-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
