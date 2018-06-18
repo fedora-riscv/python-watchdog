@@ -2,7 +2,7 @@
 
 Name:               python-%{modname}
 Version:            0.8.3
-Release:            8%{?dist}
+Release:            9%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
@@ -109,6 +109,9 @@ popd
 
 
 %changelog
+* Mon Jun 18 2018 Miro Hrončok <mhroncok@redhat.com> - 0.8.3-9
+- Rebuilt for Python 3.7
+
 * Mon Mar 26 2018 Iryna Shcherbina <ishcherb@redhat.com> - 0.8.3-8
 - Update Python 2 dependency declarations to new packaging standards
   (See https://fedoraproject.org/wiki/FinalizingFedoraSwitchtoPython3)
