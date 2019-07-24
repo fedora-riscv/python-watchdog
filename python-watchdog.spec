@@ -2,7 +2,7 @@
 
 Name:               python-%{modname}
 Version:            0.8.3
-Release:            11%{?dist}
+Release:            12%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
@@ -13,26 +13,6 @@ BuildArch:          noarch
 %description
 A Python API and shell utilities to monitor file system events.
 
-
-%package -n python2-%{modname}
-BuildArch:          noarch
-BuildRequires:      python2-devel
-BuildRequires:      python2-pytest
-BuildRequires:      python2-pytest-cov
-BuildRequires:      python2-pytest-timeout
-BuildRequires:      python2-pyyaml >= 3.09
-BuildRequires:      python2-argh >= 0.8.1
-BuildRequires:      python2-pathtools >= 0.1.1
-Requires:           python2-pyyaml >= 3.09
-Requires:           python2-argh >= 0.8.1
-Requires:           python2-pathtools >= 0.1.1
-Summary:            %{summary}
-%{?python_provide:%python_provide python2-%{modname}}
-
-%description -n python2-%{modname}
-A Python API and shell utilities to monitor file system events.
-
-
 %package -n python3-%{modname}
 BuildArch:          noarch
 BuildRequires:      python3-devel
@@ -42,10 +22,8 @@ BuildRequires:      python3-pytest-timeout
 BuildRequires:      python3-PyYAML >= 3.09
 BuildRequires:      python3-argh >= 0.8.1
 BuildRequires:      python3-pathtools >= 0.1.1
-Requires:           python3-PyYAML >= 3.09
-Requires:           python3-argh >= 0.8.1
-Requires:           python3-pathtools >= 0.1.1
 Summary:            %{summary}
+Obsoletes:          python2-%{modname} < 0.8.3-12
 %{?python_provide:%python_provide python3-%{modname}}
 
 %description -n python3-%{modname}
@@ -67,48 +45,28 @@ rm -rf %{modname}.egg-info
 
 %build
 %py3_build
-%py2_build
 
 
 %install
 %py3_install
-pushd %{buildroot}%{_bindir}
-mv watchmedo watchmedo-%{python3_version}
-ln -s watchmedo-%{python3_version} watchmedo-3
-ln -s watchmedo-%{python3_version} watchmedo-py3
-popd
-
-%py2_install
-pushd %{buildroot}%{_bindir}
-mv watchmedo watchmedo-%{python2_version}
-ln -s watchmedo-%{python2_version} watchmedo-2
-ln -s watchmedo-%{python2_version} watchmedo
-popd
 
 
 %check
-%{__python2} setup.py test
 %{__python3} setup.py test
-
-
-%files -n python2-watchdog
-%doc README.rst
-%license LICENSE
-%{python2_sitelib}/%{modname}/
-%{python2_sitelib}/%{modname}-%{version}*
-%exclude %{_bindir}/watchmedo-*3*
-%{_bindir}/watchmedo*
 
 
 %files -n python3-%{modname}
 %doc README.rst
 %license LICENSE
 %{python3_sitelib}/%{modname}/
-%{python3_sitelib}/%{modname}-%{version}-*
-%{_bindir}/watchmedo-3*
+%{python3_sitelib}/%{modname}-%{version}-*/
+%{_bindir}/watchmedo*
 
 
 %changelog
+* Wed Jul 24 2019 Miro Hrončok <mhroncok@redhat.com> - 0.8.3-12
+- Remove python2-watchdog
+
 * Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.8.3-11
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
