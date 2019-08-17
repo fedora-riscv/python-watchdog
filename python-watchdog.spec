@@ -2,7 +2,7 @@
 
 Name:               python-%{modname}
 Version:            0.8.3
-Release:            12%{?dist}
+Release:            13%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
@@ -64,6 +64,9 @@ rm -rf %{modname}.egg-info
 
 
 %changelog
+* Sat Aug 17 2019 Miro Hrončok <mhroncok@redhat.com> - 0.8.3-13
+- Rebuilt for Python 3.8
+
 * Wed Jul 24 2019 Miro Hrončok <mhroncok@redhat.com> - 0.8.3-12
 - Remove python2-watchdog
 
