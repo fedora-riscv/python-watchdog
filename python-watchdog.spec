@@ -2,7 +2,7 @@
 
 Name:               python-%{modname}
 Version:            0.8.3
-Release:            14%{?dist}
+Release:            15%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
@@ -64,6 +64,9 @@ rm -rf %{modname}.egg-info
 
 
 %changelog
+* Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.8.3-15
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Thu Oct 03 2019 Miro Hrončok <mhroncok@redhat.com> - 0.8.3-14
 - Rebuilt for Python 3.8.0rc1 (#1748018)
 
