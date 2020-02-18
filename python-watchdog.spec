@@ -29,30 +29,23 @@ Obsoletes:          python2-%{modname} < 0.8.3-12
 %description -n python3-%{modname}
 A Python API and shell utilities to monitor file system events.
 
-
 %prep
 %setup -q -n %{modname}-%{version}
-
 # Remove all shebangs
 find src -name "*.py" | xargs sed -i -e '/^#!\//, 1d'
-
 # Remove +x of the README file
 chmod -x README.rst
-
 # Remove bundled egg-info in case it exists
 rm -rf %{modname}.egg-info
-
 
 %build
 %py3_build
 
-
 %install
 %py3_install
 
-
 %check
-%tox
+PYTHONPATH=%{buildroot}%{python3_sitelib} %{__python3} -m pytest -v
 
 %files -n python3-%{modname}
 %doc README.rst
@@ -60,7 +53,6 @@ rm -rf %{modname}.egg-info
 %{python3_sitelib}/%{modname}/
 %{python3_sitelib}/%{modname}-%{version}-*/
 %{_bindir}/watchmedo*
-
 
 %changelog
 * Tue Feb 18 2020 Pierre-Yves Chibon <pingou@pingoured.fr> - 0.10.2-1
