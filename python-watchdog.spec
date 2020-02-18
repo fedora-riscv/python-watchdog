@@ -1,13 +1,13 @@
 %global modname watchdog
 
 Name:               python-%{modname}
-Version:            0.8.3
-Release:            15%{?dist}
+Version:            0.10.2
+Release:            1%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
 URL:                http://pypi.python.org/pypi/%{modname}
-Source0:            http://pypi.python.org/packages/source/w/%{modname}/%{modname}-%{version}.tar.gz
+Source0:            %pypi_source %{modname}
 BuildArch:          noarch
 
 %description
@@ -64,6 +64,10 @@ rm -rf %{modname}.egg-info
 
 
 %changelog
+* Tue Feb 18 2020 Pierre-Yves Chibon <pingou@pingoured.fr> - 0.10.2-1
+- Update to the upstream release 0.10.2
+- Use the pypi_source macro for Source0
+
 * Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.8.3-15
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
