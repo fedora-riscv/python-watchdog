@@ -52,8 +52,7 @@ rm -rf %{modname}.egg-info
 
 
 %check
-%{__python3} setup.py test
-
+%tox
 
 %files -n python3-%{modname}
 %doc README.rst
