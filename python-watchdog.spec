@@ -2,7 +2,7 @@
 
 Name:               python-%{modname}
 Version:            0.10.2
-Release:            1%{?dist}
+Release:            2%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
@@ -55,6 +55,9 @@ PYTHONPATH=%{buildroot}%{python3_sitelib} %{__python3} -m pytest -v
 %{_bindir}/watchmedo*
 
 %changelog
+* Tue May 26 2020 Miro Hrončok <mhroncok@redhat.com> - 0.10.2-2
+- Rebuilt for Python 3.9
+
 * Tue Feb 18 2020 Pierre-Yves Chibon <pingou@pingoured.fr> - 0.10.2-1
 - Update to the upstream release 0.10.2
 - Use the pypi_source macro for Source0
