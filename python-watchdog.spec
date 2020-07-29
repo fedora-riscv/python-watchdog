@@ -2,7 +2,7 @@
 
 Name:               python-%{modname}
 Version:            0.10.2
-Release:            2%{?dist}
+Release:            3%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
@@ -55,6 +55,9 @@ PYTHONPATH=%{buildroot}%{python3_sitelib} %{__python3} -m pytest -v
 %{_bindir}/watchmedo*
 
 %changelog
+* Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.10.2-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
 * Tue May 26 2020 Miro Hrončok <mhroncok@redhat.com> - 0.10.2-2
 - Rebuilt for Python 3.9
 
