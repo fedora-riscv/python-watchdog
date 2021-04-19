@@ -16,6 +16,7 @@ A Python API and shell utilities to monitor file system events.
 %package -n python3-%{modname}
 BuildArch:          noarch
 BuildRequires:      python3-devel
+BuildRequires:      python3-setuptools
 BuildRequires:      python3-pytest
 BuildRequires:      python3-pytest-cov
 BuildRequires:      python3-pytest-timeout
