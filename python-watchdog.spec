@@ -1,12 +1,12 @@
 %global modname watchdog
 
 Name:               python-%{modname}
-Version:            0.10.2
-Release:            5%{?dist}
+Version:            2.1.3
+Release:            1%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
-URL:                http://pypi.python.org/pypi/%{modname}
+URL:                https://pypi.org/project/watchdog/
 Source0:            %pypi_source %{modname}
 BuildArch:          noarch
 
@@ -14,18 +14,18 @@ BuildArch:          noarch
 A Python API and shell utilities to monitor file system events.
 
 %package -n python3-%{modname}
+Summary:            %{summary}
+
 BuildArch:          noarch
+
 BuildRequires:      python3-devel
 BuildRequires:      python3-setuptools
 BuildRequires:      python3-pytest
 BuildRequires:      python3-pytest-cov
+BuildRequires:      python3-pytest-rerunfailures
 BuildRequires:      python3-pytest-timeout
 BuildRequires:      python3-PyYAML >= 3.09
 BuildRequires:      python3-argh >= 0.8.1
-BuildRequires:      python3-pathtools >= 0.1.1
-Summary:            %{summary}
-Obsoletes:          python2-%{modname} < 0.8.3-12
-%{?python_provide:%python_provide python3-%{modname}}
 
 %description -n python3-%{modname}
 A Python API and shell utilities to monitor file system events.
@@ -46,7 +46,7 @@ rm -rf %{modname}.egg-info
 %py3_install
 
 %check
-PYTHONPATH=%{buildroot}%{python3_sitelib} %{__python3} -m pytest -v
+%pytest -v
 
 %files -n python3-%{modname}
 %doc README.rst
