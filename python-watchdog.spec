@@ -1,8 +1,8 @@
 %global modname watchdog
 
 Name:               python-%{modname}
-Version:            2.1.3
-Release:            2%{?dist}
+Version:            2.1.6
+Release:            1%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
@@ -25,7 +25,6 @@ BuildRequires:      python3-pytest-cov
 BuildRequires:      python3-pytest-rerunfailures
 BuildRequires:      python3-pytest-timeout
 BuildRequires:      python3-PyYAML >= 3.09
-BuildRequires:      python3-argh >= 0.8.1
 
 %description -n python3-%{modname}
 A Python API and shell utilities to monitor file system events.
@@ -56,6 +55,10 @@ rm -rf %{modname}.egg-info
 %{_bindir}/watchmedo*
 
 %changelog
+* Mon Oct 04 2021 Charalampos Stratakis <cstratak@redhat.com> - 2.1.6-1
+- Update to 2.1.6
+- Remove redundant python-argh dependency
+
 * Tue Jul 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 2.1.3-2
 - Second attempt - Rebuilt for
   https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
