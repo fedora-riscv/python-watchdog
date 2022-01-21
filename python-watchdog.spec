@@ -2,7 +2,7 @@
 
 Name:               python-%{modname}
 Version:            2.1.6
-Release:            1%{?dist}
+Release:            2%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
@@ -55,6 +55,9 @@ rm -rf %{modname}.egg-info
 %{_bindir}/watchmedo*
 
 %changelog
+* Fri Jan 21 2022 Fedora Release Engineering <releng@fedoraproject.org> - 2.1.6-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
 * Mon Oct 04 2021 Charalampos Stratakis <cstratak@redhat.com> - 2.1.6-1
 - Update to 2.1.6
 - Remove redundant python-argh dependency
