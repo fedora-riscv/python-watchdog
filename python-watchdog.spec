@@ -1,8 +1,8 @@
 %global modname watchdog
 
 Name:               python-%{modname}
-Version:            2.1.6
-Release:            3%{?dist}
+Version:            2.1.9
+Release:            1%{?dist}
 Summary:            File system events monitoring
 
 License:            ASL 2.0 and BSD and MIT
@@ -45,7 +45,8 @@ rm -rf %{modname}.egg-info
 %py3_install
 
 %check
-%pytest -v
+# test_unmount_watched_directory_filesystem,test_unmount_watched_directory_filesystem requires sudo and cannot work here.
+%pytest -v -k 'not test_unmount_watched_directory_filesystem' -k 'not test_unmount_watched_directory_filesystem'
 
 %files -n python3-%{modname}
 %doc README.rst
@@ -55,6 +56,9 @@ rm -rf %{modname}.egg-info
 %{_bindir}/watchmedo*
 
 %changelog
+* Wed Jun 29 2022 Julien Enselme <jujens@jujens.eu> - 2.1.9-1
+- Update to 2.1.9
+
 * Mon Jun 13 2022 Python Maint <python-maint@redhat.com> - 2.1.6-3
 - Rebuilt for Python 3.11
 
